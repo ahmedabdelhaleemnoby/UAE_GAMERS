@@ -55,14 +55,14 @@ const Header = () => {
       </div>
 
       {/* Navigation and Social Icons (Visible on larger screens) */}
-      <div className={`lg:flex lg:items-center bg-gradient-to-r from-teal-400 to-blue-500 rounded-r-[2rem] px-4 py-2 lg:px-6 lg:py-3 shadow-lg ${isMenuOpen ? "block" : "hidden"} lg:block`}>
+      <div className={`lg:flex lg:items-center bg-teal-400 rounded-br-2xl px-4 py-2 lg:px-6 lg:py-3 shadow-lg ${isMenuOpen ? "block" : "hidden"} lg:block`}>
         {/* Nav Menu */}
-        <nav className="flex items-center gap-8 lg:gap-10 mr-6">
+        <nav className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 mr-2 lg:mr-6">
           <Link
             href="/"
-            className={`relative text-lg font-bold ${
+            className={`relative text-sm lg:text-lg font-bold ${
               pathname === "/"
-                ? "text-black bg-white px-5 py-2 rounded-l-lg shadow-lg"
+                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer`}
           >
@@ -70,9 +70,9 @@ const Header = () => {
           </Link>
           <Link
             href="/gallery"
-            className={`text-lg ${
+            className={`text-sm lg:text-lg ${
               pathname === "/gallery"
-                ? "text-black bg-white px-5 py-2 rounded-l-lg shadow-lg"
+                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-r-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer`}
           >
@@ -80,9 +80,9 @@ const Header = () => {
           </Link>
           <Link
             href="/blogs"
-            className={`text-lg ${
+            className={`text-sm lg:text-lg ${
               pathname === "/blogs"
-                ? "text-black bg-white px-5 py-2 rounded-l-lg shadow-lg"
+                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-r-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer`}
           >
@@ -90,9 +90,9 @@ const Header = () => {
           </Link>
           <Link
             href="/serves"
-            className={`text-lg ${
+            className={`text-sm lg:text-lg ${
               pathname === "/serves"
-                ? "text-black bg-white px-5 py-2 rounded-l-lg shadow-lg"
+                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-r-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer`}
           >
@@ -101,45 +101,45 @@ const Header = () => {
         </nav>
 
         {/* Social Icons */}
-        <div className="flex gap-4">
+        <div className="flex gap-2 lg:gap-4 mt-4 lg:mt-0">
           <Link href={settings.tiktok_link} target="_blank">
             <Image
               src="/icons/tiktok.png"
               alt="TikTok"
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               unoptimized={true}
-              className="h-6 w-6 lg:h-8 lg:w-8 cursor-pointer hover:scale-110 transition-transform"
+              className="h-5 w-5 lg:h-6 lg:w-6 cursor-pointer hover:scale-110 transition-transform"
             />
           </Link>
           <Link href={settings.facebook_link} target="_blank">
             <Image
               src="/icons/facebook.png"
               alt="Facebook"
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               unoptimized={true}
-              className="h-6 w-6 lg:h-8 lg:w-8 cursor-pointer hover:scale-110 transition-transform"
+              className="h-5 w-5 lg:h-6 lg:w-6 cursor-pointer hover:scale-110 transition-transform"
             />
           </Link>
           <Link href={settings.twitter_link} target="_blank">
             <Image
               src="/icons/twitter.png"
               alt="Twitter"
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               unoptimized={true}
-              className="h-6 w-6 lg:h-8 lg:w-8 cursor-pointer hover:scale-110 transition-transform"
+              className="h-5 w-5 lg:h-6 lg:w-6 cursor-pointer hover:scale-110 transition-transform"
             />
           </Link>
           <Link href={settings.instagram_link} target="_blank">
             <Image
               src="/icons/instagram.png"
               alt="Instagram"
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               unoptimized={true}
-              className="h-6 w-6 lg:h-8 lg:w-8 cursor-pointer hover:scale-110 transition-transform"
+              className="h-5 w-5 lg:h-6 lg:w-6 cursor-pointer hover:scale-110 transition-transform"
             />
           </Link>
         </div>
