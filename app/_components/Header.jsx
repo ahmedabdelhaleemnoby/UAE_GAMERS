@@ -28,9 +28,9 @@ const Header = () => {
   if (!mounted || !settings) return null; // Render nothing until settings data is fetched
 
   return (
-    <header className="flex justify-between items-center py-3 px-4 lg:py-5 lg:px-6 bg-gradient-to-r from-teal-500 to-green-900 border-b border-opacity-10 border-white">
-      {/* Logo Section */}
-      <div className="flex items-center gap-4">
+    <header className="flex items-center justify-between py-3 px-4 lg:py-5 lg:px-6 bg-gradient-to-r from-teal-500 to-green-900 border-b border-opacity-10 border-white">
+      {/* Logo Section - 25% width */}
+      <div className="flex items-center gap-4 w-[25%]">
         <Image
           src={logo} // Use the logo from the settings API
           alt="Logo"
@@ -45,56 +45,53 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Hamburger Button */}
-      <div className="lg:hidden">
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
-          </svg>
-        </button>
-      </div>
+      {/* Empty Space for 15% */}
+      <div className="hidden lg:block w-[15%]"></div>
 
-      {/* Navigation and Social Icons (Visible on larger screens) */}
-      <div className={`lg:flex lg:items-center bg-teal-400 rounded-br-2xl px-4 py-2 lg:px-6 lg:py-3 shadow-lg ${isMenuOpen ? "block" : "hidden"} lg:block`}>
+      {/* Navigation and Social Icons (Visible on larger screens) - 40% width */}
+      <div className={`lg:flex lg:items-center w-[60%] justify-evenly bg-teal-400 rounded-br-2xl px-4 py-2 lg:px-6 lg:py-3 shadow-lg ${isMenuOpen ? "block" : "hidden"} lg:block`}  style={{
+        background:
+          "linear-gradient(to right, #00b2b1 44%, #00cccb 52%, #00b4df 80%, #009ff3 100%)",
+      }}>
         {/* Nav Menu */}
         <nav className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 mr-2 lg:mr-6">
           <Link
             href="/"
-            className={`relative text-sm lg:text-lg font-bold ${
+            className={`relative text-sm lg:text-2xl font-bold ${
               pathname === "/"
-                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-br-2xl shadow-lg"
+                ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
-            } hover:text-teal-300 transition-colors cursor-pointer`}
+            } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
           >
             Home
           </Link>
           <Link
             href="/gallery"
-            className={`text-sm lg:text-lg ${
+            className={`text-sm lg:text-2xl ${
               pathname === "/gallery"
-                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-r-2xl shadow-lg"
+                ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
-            } hover:text-teal-300 transition-colors cursor-pointer`}
+            } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
           >
             Gallery
           </Link>
           <Link
             href="/blogs"
-            className={`text-sm lg:text-lg ${
+            className={`text-sm lg:text-2xl ${
               pathname === "/blogs"
-                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-r-2xl shadow-lg"
+                ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
-            } hover:text-teal-300 transition-colors cursor-pointer`}
+            } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
           >
             Blogs
           </Link>
           <Link
             href="/serves"
-            className={`text-sm lg:text-lg ${
+            className={`text-sm lg:text-2xl ${
               pathname === "/serves"
-                ? "text-black bg-white px-3 lg:px-5 py-2 rounded-r-2xl shadow-lg"
+                ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
-            } hover:text-teal-300 transition-colors cursor-pointer`}
+            } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
           >
             Serves
           </Link>
@@ -144,6 +141,9 @@ const Header = () => {
           </Link>
         </div>
       </div>
+
+      {/* Empty Space to the Right */}
+      <div className="hidden lg:block w-[20%]"></div>
     </header>
   );
 };
