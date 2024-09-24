@@ -35,7 +35,7 @@ export default function Home() {
   // }, []); // تشغيل الوظيفة عند تحميل الصفحة
 
   return (
-    <>
+    <div className="bg-gradient-to-r from-[#003A3A] to-[#00B2B1] min-h-screen">
       <Header />
       <Hero />
       <ProductCards />
@@ -47,6 +47,6 @@ export default function Home() {
       <Stories />
       <FAQ />
       <Footer />
-    </>
+    </div>
   );
 }

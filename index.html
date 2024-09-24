@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-rounded {
+            border-bottom-right-radius: 2rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+          }
+          
+          .custom-padding {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
+          .custom-hover {
+            transition: all 0.3s ease;
+          }
+          
+          .custom-hover:hover {
+            transform: scale(1.1);
+          }
+          
+    </style>
+</head>
+<body>
+    <div className="flex justify-between items-center py-3 px-4 lg:py-5 lg:px-6 bg-gradient-to-r from-teal-500 to-green-900 border-b border-opacity-10 border-white rounded-br-2xl shadow-lg">
+        {/* Left Side - Logo */}
+        <div className="flex items-center gap-4 w-[25%]">
+          <div className="bg-white rounded-br-2xl px-4 py-2 shadow-md">
+            <img src="/logo.png" alt="Logo" className="w-12 h-12" />
+          </div>
+        </div>
+      
+        {/* Middle - Navigation Links */}
+        <nav className="flex justify-evenly gap-10 text-white w-[50%]">
+          <a href="#" className="relative font-bold hover:text-teal-300 text-lg transition-colors">
+            Home
+          </a>
+          <a href="#" className="font-bold hover:text-teal-300 text-lg transition-colors">
+            Gallery
+          </a>
+          <a href="#" className="font-bold hover:text-teal-300 text-lg transition-colors">
+            Blogs
+          </a>
+          <a href="#" className="font-bold hover:text-teal-300 text-lg transition-colors">
+            Serves
+          </a>
+        </nav>
+      
+        {/* Right Side - Social Icons */}
+        <div className="flex gap-4 items-center w-[20%]">
+          <a href="#" className="hover:scale-110 transition-transform">
+            <img src="/icons/tiktok.png" alt="TikTok" className="w-6 h-6" />
+          </a>
+          <a href="#" className="hover:scale-110 transition-transform">
+            <img src="/icons/facebook.png" alt="Facebook" className="w-6 h-6" />
+          </a>
+          <a href="#" className="hover:scale-110 transition-transform">
+            <img src="/icons/twitter.png" alt="Twitter" className="w-6 h-6" />
+          </a>
+          <a href="#" className="hover:scale-110 transition-transform">
+            <img src="/icons/instagram.png" alt="Instagram" className="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+      
+</body>
+</html>

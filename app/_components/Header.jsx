@@ -28,7 +28,7 @@ const Header = () => {
   if (!mounted || !settings) return null; // Render nothing until settings data is fetched
 
   return (
-    <header className="flex items-center justify-between py-3 px-4 lg:py-5 lg:px-6 bg-gradient-to-r from-teal-500 to-green-900 border-b border-opacity-10 border-white">
+    <header className="flex items-center justify-between py-3 px-4 lg:py-5 lg:px-6 bg-gradient-to-t from-[rgba(0,0,0,0)] to-[rgba(0,204,203,0.5)] border-b border-opacity-10 border-white">
       {/* Logo Section - 25% width */}
       <div className="flex items-center gap-4 w-[25%]">
         <Image
@@ -45,19 +45,32 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Empty Space for 15% */}
-      <div className="hidden lg:block w-[15%]"></div>
+      {/* Hamburger Button (Visible only on mobile) */}
+      <div className="lg:hidden">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+          </svg>
+        </button>
+      </div>
 
       {/* Navigation and Social Icons (Visible on larger screens) - 40% width */}
-      <div className={`lg:flex lg:items-center w-[60%] justify-evenly bg-teal-400 rounded-br-2xl px-4 py-2 lg:px-6 lg:py-3 shadow-lg ${isMenuOpen ? "block" : "hidden"} lg:block`}  style={{
-        background:
-          "linear-gradient(to right, #00b2b1 44%, #00cccb 52%, #00b4df 80%, #009ff3 100%)",
-      }}>
+      <div
+        className={`lg:flex lg:items-center w-[60%] justify-rounded bg-teal-400 relative rounded-br-2xl px-4 py-2 lg:px-6 lg:py-3 shadow-lg ${
+          isMenuOpen ? "block" : "hidden"
+        } lg:block`}
+        style={{
+          background: "linear-gradient(to right, #00b2b1 44%, #00cccb 52%, #00b4df 80%, #009ff3 100%)",
+        }}
+      >
+        {/* Add the triangle effect */}
+        <div className="absolute top-0 left-0 -rotate-90 w-0 h-0 border-t-[80px] border-t-[rgba(0,204,203,1)] border-l-[80px] border-l-transparent"></div>
+
         {/* Nav Menu */}
         <nav className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 mr-2 lg:mr-6">
           <Link
             href="/"
-            className={`relative text-sm lg:text-2xl font-bold ${
+            className={`relative text-sm lg:text-lg font-bold ${
               pathname === "/"
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
@@ -67,7 +80,7 @@ const Header = () => {
           </Link>
           <Link
             href="/gallery"
-            className={`text-sm lg:text-2xl ${
+            className={`text-sm lg:text-lg ${
               pathname === "/gallery"
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
@@ -77,7 +90,7 @@ const Header = () => {
           </Link>
           <Link
             href="/blogs"
-            className={`text-sm lg:text-2xl ${
+            className={`text-sm lg:text-lg ${
               pathname === "/blogs"
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
@@ -87,7 +100,7 @@ const Header = () => {
           </Link>
           <Link
             href="/serves"
-            className={`text-sm lg:text-2xl ${
+            className={`text-sm lg:text-lg ${
               pathname === "/serves"
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
