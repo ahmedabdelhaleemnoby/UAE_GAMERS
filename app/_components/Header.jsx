@@ -61,10 +61,11 @@ const Header = () => {
         } lg:block`}
         style={{
           background: "linear-gradient(to right, #00b2b1 44%, #00cccb 52%, #00b4df 80%, #009ff3 100%)",
+          clipPath: "polygon(100% 0, 100% 49%, 100% 100%, 0 100%, 0 26%, 4% 0)",
         }}
       >
         {/* Add the triangle effect */}
-        <div className="absolute top-0 left-0 -rotate-90 w-0 h-0 border-t-[80px] border-t-[rgba(0,204,203,1)] border-l-[80px] border-l-transparent"></div>
+        {/* <div className="absolute top-0 left-0 -rotate-90 w-0 h-0 border-t-[80px] border-t-[rgba(0,204,203,1)] border-l-[80px] border-l-transparent"></div> */}
 
         {/* Nav Menu */}
         <nav className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 mr-2 lg:mr-6">
@@ -75,6 +76,11 @@ const Header = () => {
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
+            style={{
+              clipPath: "polygon(50% 0%, 100% 0, 100% 60%, 96% 94%, 0 98%, 0% 60%, 2% 5%)",
+              borderBottomRightRadius: "36%",
+              borderTopLeftRadius: "39%",
+            }}
           >
             Home
           </Link>
@@ -85,6 +91,11 @@ const Header = () => {
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
+            style={{
+              clipPath: "polygon(50% 0%, 100% 0, 100% 60%, 96% 94%, 0 98%, 0% 60%, 2% 5%)",
+              borderBottomRightRadius: "36%",
+              borderTopLeftRadius: "39%",
+            }}
           >
             Gallery
           </Link>
@@ -95,6 +106,11 @@ const Header = () => {
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
+            style={{
+              clipPath: "polygon(50% 0%, 100% 0, 100% 60%, 96% 94%, 0 98%, 0% 60%, 2% 5%)",
+              borderBottomRightRadius: "36%",
+              borderTopLeftRadius: "39%",
+            }}
           >
             Blogs
           </Link>
@@ -105,6 +121,11 @@ const Header = () => {
                 ? "text-black bg-white px-8 lg:px-5 py-2 rounded-br-2xl shadow-lg"
                 : "text-white"
             } hover:text-teal-300 transition-colors cursor-pointer mx-8 sm:mx-0`}
+            style={{
+              clipPath: "polygon(50% 0%, 100% 0, 100% 60%, 96% 94%, 0 98%, 0% 60%, 2% 5%)",
+              borderBottomRightRadius: "36%",
+              borderTopLeftRadius: "39%",
+            }}
           >
             Serves
           </Link>
