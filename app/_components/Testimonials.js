@@ -35,7 +35,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-gradient-to-r from-teal-900 via-teal-700 to-teal-500 py-12 text-white flex flex-col items-center text-center">
-      <h2 className="text-3xl lg:text-4xl uppercase mb-8">Super Nova Packs</h2>
+      <h2 className="text-3xl lg:text-4xl uppercase mb-8">Super Nova Testimonials</h2>
 
       {/* Responsive layout for testimonials */}
       <div className="flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-10 w-full px-4">
@@ -84,13 +84,13 @@ const Testimonials = () => {
       <div className="flex gap-4 mt-8">
         <button
           onClick={prevTestimonial}
-          className="bg-teal-400 bg-opacity-80 text-white text-xl p-3 rounded-full hover:bg-teal-500 transition-colors"
+          className="bg-teal-400 bg-opacity-80 text-white text-xl px-3 py-1 rounded-full hover:bg-teal-500 transition-colors"
         >
           {"<"}
         </button>
         <button
           onClick={nextTestimonial}
-          className="bg-teal-400 bg-opacity-80 text-white text-xl p-3 rounded-full hover:bg-teal-500 transition-colors"
+          className="bg-teal-400 bg-opacity-80 text-white text-xl px-3 py-1 rounded-full hover:bg-teal-500 transition-colors"
         >
           {">"}
         </button>

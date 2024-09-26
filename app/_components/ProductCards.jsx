@@ -66,7 +66,7 @@ const ProductCards = () => {
             <div className="slider-container relative w-full mb-4"
             
             >
-              <div className=" border-2 border-white w-2/3 h-2/3 left-1/4 top-1/3 absolute rotate-45 -z-1"></div>
+              {/* <div className=" border-2 border-white w-2/3 h-2/3 left-1/3 top-1/3 absolute rotate-45 -z-1"></div> */}
               {/* Slider Image */}
               <Image
                 src={products[index].image_urls[currentIndices[index]]}
@@ -78,7 +78,7 @@ const ProductCards = () => {
                 
               />
               {/* Slider controls */}
-              <div
+              {/* <div
                 className="absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer text-3xl bg-black bg-opacity-50 text-white p-2 rounded-full"
                 onClick={() => prevSlide(index)}
               >
@@ -89,25 +89,35 @@ const ProductCards = () => {
                 onClick={() => nextSlide(index)}
               >
                 &#10095;
-              </div>
+              </div> */}
             </div>
 
             <div className="text-center mb-4">
-              <h3 className="text-lg lg:text-xl font-bold text-green-400 mb-2">
+              <h3 className="text-lg lg:text-4xl font-bold text-white mb-2">
                 {products[index].title}
               </h3>
               <p className="text-gray-300 text-sm lg:text-base mb-4">
                 {products[index].short_description}
               </p>
             </div>
-
+                
             <div className="flex justify-between items-center">
-              <button className="bg-green-400 text-black font-bold py-2 px-4 lg:px-6 rounded-l-2xl hover:bg-teal-400">
+              <button className="text-white font-bold bg-[#00B2B1] rounded-br-2xl py-2 px-4 lg:px-6 hover:bg-teal-400"
+              style={{
+                // background: "linear-gradient(to right, #00b2b1 44%, #00cccb 52%, #00b4df 80%, #009ff3 100%)",
+                clipPath: "polygon(100% 0, 100% 49%, 100% 100%, 0 100%, 0 26%, 4% 0)",
+              }}
+              >
                 Button
               </button>
               <div className="flex flex-col text-white text-sm lg:text-base">
-                <small>Starting from</small>
-                <p className="text-lg font-bold">{products[index].price} AED</p>
+                <strong>Starting from</strong>
+                <p className="text-lg font-bold" style={{
+                  backgroundImage: "url('/price BAR-animtion.png')",
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center',
+                }}>{products[index].price} AED</p>
+              
               </div>
             </div>
           </div>

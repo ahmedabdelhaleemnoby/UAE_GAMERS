@@ -51,10 +51,15 @@ const Stories = () => {
           className="p-3 lg:p-4 text-base rounded-full shadow-lg w-full sm:w-72 focus:outline-none text-black"
           required
         />
+        
         <button
           type="submit"
-          className="bg-green-400 text-black font-bold py-3 px-6 lg:py-4 lg:px-8 rounded-full hover:bg-teal-400 transition-colors w-full sm:w-auto"
+          className="text-white font-bold bg-[#00B2B1] rounded-br-2xl py-2 px-4 lg:px-6 hover:bg-teal-400"
           disabled={isSubmitting}
+          style={{
+            // background: "linear-gradient(to right, #00b2b1 44%, #00cccb 52%, #00b4df 80%, #009ff3 100%)",
+            clipPath: "polygon(100% 0, 100% 49%, 100% 100%, 0 100%, 0 26%, 4% 0)",
+          }}
         >
           {isSubmitting ? "Submitting..." : "Subscribe"}
         </button>

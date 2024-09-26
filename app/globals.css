@@ -25,3 +25,19 @@ body {
     text-wrap: balance;
   }
 }
+
+.swiper-button-next::after, .swiper-rtl .swiper-button-prev::after {
+  content: "prev" !important; /* تعيين المحتوى إلى "prev" */
+  font-size: 16px !important; /* ضبط حجم الخط حسب الحاجة */
+  color: white; /* تغيير اللون إلى الأبيض */
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+  content: "next" !important; /* تعيين المحتوى إلى "prev" */
+  font-size: 16px !important; /* ضبط حجم الخط حسب الحاجة */
+  color: white; /* تغيير اللون إلى الأبيض */
+}
+.swiper-button-next, .swiper-button-prev {
+  border-radius: 50%; /* تغيير شكل الزر إلى دائري */
+  width: 40px !important; /* تغيير عرض الزر */
+  height: 40px !important; /* تغيير ارتفاع الزر */
+}

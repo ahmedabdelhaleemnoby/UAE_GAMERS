@@ -45,14 +45,14 @@ const SuperNovaBlogs = () => {
       </div>
 
       {/* Navigation buttons (Optional) */}
-      <div className="flex justify-center items-center mt-8">
+      {/* <div className="flex justify-center items-center mt-8">
         <button className="bg-teal-400 text-white p-3 rounded-full mx-2 hover:bg-teal-500">
           {"<"}
         </button>
         <button className="bg-teal-400 text-white p-3 rounded-full mx-2 hover:bg-teal-500">
           {">"}
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

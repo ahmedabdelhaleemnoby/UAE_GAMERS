@@ -6,7 +6,7 @@ const BASE_URL2 = "https://backend.pcgamers.ae/api";
 // Helper function to handle GET requests
 export const getHeroSection = async (id = 1) => {
   try {
-    const response = await fetch(`${BASE_URL}/hero-section/${id}`);
+    const response = await fetch(`${BASE_URL2}/hero-section/${id}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch hero section: ${response.statusText}`);
     }
@@ -21,7 +21,7 @@ export const getHeroSection = async (id = 1) => {
 // Fetch settings data
 export const getSettings = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/settings`);
+    const response = await fetch(`${BASE_URL2}/settings`);
     if (!response.ok) {
       throw new Error(`Failed to fetch settings: ${response.statusText}`);
     }
@@ -35,7 +35,7 @@ export const getSettings = async () => {
 // Fetch Packages data
 export const getPackages = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/packages`);
+    const response = await fetch(`${BASE_URL2}/packages`);
     if (!response.ok) {
       throw new Error(`Failed to fetch packages: ${response.statusText}`);
     }
@@ -50,7 +50,7 @@ export const getPackages = async () => {
 
 export const getSuperTitle = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/super-title`);
+    const response = await fetch(`${BASE_URL2}/super-title`);
     if (!response.ok) {
       throw new Error(`Failed to fetch super title: ${response.statusText}`);
     }
@@ -65,7 +65,7 @@ export const getSuperTitle = async () => {
 // Fetch TikTok Videos
 export const getTikTokVideos = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/tiktok-videos`);
+    const response = await fetch(`${BASE_URL2}/tiktok-videos`);
     if (!response.ok) {
       throw new Error(`Failed to fetch TikTok videos: ${response.statusText}`);
     }
@@ -80,7 +80,7 @@ export const getTikTokVideos = async () => {
 // Fetch Services Data
 export const getServices = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/services`);
+    const response = await fetch(`${BASE_URL2}/services`);
     if (!response.ok) {
       throw new Error(`Failed to fetch services: ${response.statusText}`);
     }
@@ -95,7 +95,7 @@ export const getServices = async () => {
 // Fetch Services Main Images
 export const getMainServiceImages = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/services/getmain/image`);
+    const response = await fetch(`${BASE_URL2}/services/getmain/image`);
     if (!response.ok) {
       throw new Error(`Failed to fetch services main images: ${response.statusText}`);
     }
@@ -110,7 +110,7 @@ export const getMainServiceImages = async () => {
 // Fetch Testimonials
 export const getTestimonials = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/testimonials`);
+    const response = await fetch(`${BASE_URL2}/testimonials`);
     if (!response.ok) {
       throw new Error(`Failed to fetch testimonials: ${response.statusText}`);
     }
@@ -150,7 +150,7 @@ export const submitEmail = async (email) => {
 // Function to fetch FAQs
 export const getFAQs = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/faqs`);
+    const response = await fetch(`${BASE_URL2}/faqs`);
     if (!response.ok) {
       throw new Error(`Failed to fetch FAQs: ${response.statusText}`);
     }
@@ -165,7 +165,7 @@ export const getFAQs = async () => {
 // Function to fetch brand logos
 export const getPartners = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/partners`);
+    const response = await fetch(`${BASE_URL2}/partners`);
     if (!response.ok) {
       throw new Error(`Failed to fetch partners: ${response.statusText}`);
     }

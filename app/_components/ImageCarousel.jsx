@@ -14,7 +14,7 @@ const ImageCarousel = () => {
     getMainServiceImages()
       .then((data) => {
         setServices(data); // Set the fetched services data
-        setActiveImage(data[0].main_image_url); // Set the first image as the active image
+        setActiveImage(data[1]?.main_image_url || data[0]?.main_image_url); // Set the second image as the active image if it exists, otherwise the first one
         setLoading(false); // Stop loading
       })
       .catch((error) => {
@@ -23,12 +23,20 @@ const ImageCarousel = () => {
       });
   }, []);
 
+  // Update the active image when the currentIndex changes
+  useEffect(() => {
+    if (services.length > 0) {
+      const middleIndex = currentIndex + 1; // Middle index of the three displayed thumbnails
+      setActiveImage(services[middleIndex]?.main_image_url || services[0]?.main_image_url);
+    }
+  }, [currentIndex, services]);
+
   // Handle clicking the thumbnail to change the main image
   const handleThumbnailClick = (imageSrc) => {
     setActiveImage(imageSrc);
   };
 
-  // Show the next set of 3 services
+  // Show the next image
   const nextSlide = () => {
     if (currentIndex < services.length - 3) {
       setCurrentIndex(currentIndex + 1);
@@ -37,7 +45,7 @@ const ImageCarousel = () => {
     }
   };
 
-  // Show the previous set of 3 services
+  // Show the previous image
   const prevSlide = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -55,7 +63,7 @@ const ImageCarousel = () => {
       <h2 className="text-4xl font-bold uppercase mb-8">Super Nova Packs</h2>
 
       {/* Large Main Image */}
-      <div className="relative bg-teal-600 rounded-xl mx-auto mb-8 w-full max-w-4xl overflow-hidden">
+      <div className="relative bg-transparent rounded-xl mx-auto w-full max-w-4xl overflow-hidden">
         <Image
           src={activeImage}
           alt="Main Display"
@@ -67,22 +75,14 @@ const ImageCarousel = () => {
       </div>
 
       {/* Thumbnail Carousel */}
-      <div className="relative flex justify-center gap-4 items-center">
-        {/* Previous Arrow */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 p-3 text-2xl bg-teal-500 text-white rounded-full hover:bg-teal-400 transition"
-        >
-          &lt;
-        </button>
-
+      <div className="relative flex justify-center gap-4 items-center mt-4">
         {/* Thumbnails */}
         <div className="flex gap-4">
           {services.slice(currentIndex, currentIndex + 3).map((service) => (
             <div
               key={service.id}
               onClick={() => handleThumbnailClick(service.main_image_url)}
-              className={`cursor-pointer p-2 border-2 rounded-lg transition-transform duration-300 ${
+              className={`cursor-pointer -mt-6 border-2 rounded-lg transition-transform duration-300 ${
                 activeImage === service.main_image_url ? "border-teal-400" : "border-transparent"
               } hover:scale-105`}
             >
@@ -97,11 +97,22 @@ const ImageCarousel = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-center gap-4 mt-4">
+        {/* Previous Arrow */}
+        <button
+          onClick={prevSlide}
+          className="px-3 py-1 text-2xl bg-teal-500 text-white rounded-full hover:bg-teal-400 transition"
+        >
+          &lt;
+        </button>
 
         {/* Next Arrow */}
         <button
           onClick={nextSlide}
-          className="absolute right-0 p-3 text-2xl bg-teal-500 text-white rounded-full hover:bg-teal-400 transition"
+          className="px-3 py-1 text-2xl bg-teal-500 text-white rounded-full hover:bg-teal-400 transition"
         >
           &gt;
         </button>
