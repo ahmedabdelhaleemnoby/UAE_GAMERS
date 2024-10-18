@@ -54,9 +54,9 @@ const ImagePopup = () => {
   }
 
   return (
-    <div className="flex justify-between p-12 bg-gradient-to-r from-teal-900 via-teal-700 to-teal-500">
+    <div className="flex flex-col lg:flex-row justify-between p-4 lg:p-12 bg-gradient-to-r from-teal-900 via-teal-700 to-teal-500">
       {/* Single Image */}
-      <div className="max-w-[40%] mt-4 flex justify-center cursor-pointer" onClick={openModal}>
+      <div className="lg:max-w-[40%] mt-4 flex justify-center cursor-pointer" onClick={openModal}>
         <Image
           src={image.main_image_url} // Use the main image URL from API
           alt="Main Image"
@@ -67,28 +67,28 @@ const ImagePopup = () => {
         />
       </div>
 
-      <div className="max-w-[55%] flex flex-col justify-center text-white">
+      <div className="lg:max-w-[55%] flex flex-col justify-center text-white mt-6 lg:mt-0">
         {/* Title Section */}
-        <h2 className="text-8xl text-center font-bold mb-5 relative">
+        <h2 className="text-4xl lg:text-8xl text-center font-bold mb-5 relative">
           <span className={`relative ${modalIsOpen ? '' : 'z-10'}`} >{superTitleData.title || "Super Title"}</span>
-          <span className="absolute top-12 left-28 w-2/3 h-12 opacity-60" style={{
+          <span className="absolute top-6 lg:top-12 left-10 lg:left-28 w-2/3 h-12 opacity-60" style={{
                   backgroundImage: "url('/Rectangle 6957.png')",
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center',
                 }}></span>
         </h2>
         {/* Description */}
-        <p className="text-lg mb-5 leading-relaxed pt-6">
+        <p className="text-base lg:text-lg mb-3 lg:mb-5 leading-relaxed pt-4 lg:pt-6">
           {superTitleData.description} {/* Use the description from API */}
         </p>
-        <p className="text-lg mb-5 leading-relaxed">
+        <p className="text-sm lg:text-lg mb-3 lg:mb-5 leading-relaxed">
           {/* Adding more text for design consistency */}
           Office ipsum you must be muted. Uat market submit market box. Performance shoulder your squad shoot reinvent unpack crank die moving. Principles
         </p>
-        <div className="flex justify-between items-center">
-          <div className='flex flex-col'>
-            <p className="text-2xl font-bold">Starting from</p>
-            <p className="text-2xl font-bold">2000 AED</p>
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <div className='flex flex-col mb-4 lg:mb-0'>
+            <p className="text-lg lg:text-2xl font-bold">Starting from</p>
+            <p className="text-lg lg:text-2xl font-bold">2000 AED</p>
           </div>
           <button className="text-white font-bold bg-[#00B2B1] rounded-br-2xl py-2 px-4 lg:px-6 hover:bg-teal-400"
               style={{
@@ -112,8 +112,9 @@ const ImagePopup = () => {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: '50%', // Adjust width to take half the screen
-            height: '100vh', // Adjust height to be the full height of the viewport
+            width: '90%', // Adjust width for mobile devices
+            maxWidth: '600px', // Limit width for larger screens
+            height: '90vh', // Adjust height for mobile devices
             backgroundColor: 'transparent', // Set the background color to transparent
             color: '#fff',
           },
@@ -129,7 +130,7 @@ const ImagePopup = () => {
                 width={500}
                 height={700}
                 unoptimized={true}
-                style={{ height: `${windowHeight}px` }} // Set the height of the image to the window's height
+                style={{ height: `${windowHeight}px`, width: '100%' }} // Set the height of the image to the window's height
               />
             </SwiperSlide>
           ))}

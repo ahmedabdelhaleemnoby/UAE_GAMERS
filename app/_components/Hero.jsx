@@ -34,7 +34,12 @@ const Hero = () => {
       {/* Conditionally render either an image or a video */}
       {isVideo(media) ? (
         <>
-          <video className="w-full h-full object-cover absolute top-0 left-0" autoPlay loop muted>
+          <video
+            className="w-full h-full object-cover absolute top-0 left-0 md:object-fill"
+            autoPlay
+            loop
+            muted
+          >
             <source src={media} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -44,20 +49,16 @@ const Hero = () => {
         <Image
           src={media}
           alt="Hero"
-          className="object-cover absolute top-0 left-0 w-full h-full"
+          className="object-fill absolute top-0 left-0 w-full h-full md:object-fill"
           width={1920}
           height={1080}
           unoptimized={true}
         />
       )}
-      
+
       <div className="relative z-10 text-center p-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Super Nova Packs
-        </h1>
-        <p className="text-lg md:text-2xl mb-6">
-          Your Ultimate Tech Experience
-        </p>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">Super Nova Packs</h1>
+        <p className="text-lg md:text-2xl mb-6">Your Ultimate Tech Experience</p>
         <button className="bg-green-400 text-black font-bold py-3 px-6 rounded-full hover:bg-teal-400 transition-colors mt-4 text-sm md:text-lg">
           Get Started
         </button>
